@@ -3,7 +3,7 @@ import streamlit as st
 #from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 import requests
-import pd
+import pandas as pd
 
 st.title(":cup_with_straw: Customize Your Smoothie!:cup_with_straw:")
 st.write(
@@ -23,7 +23,7 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT
 #st.stop()
 #convert the Snowpark dataframe to a pandas dataframe so we can use the loc function
 pd_df=my_dataframe.to_pandas()
-st.dataframe(pd_df)
+#st.dataframe(pd_df)
 #st.stop()
 
 ingredients_list = st.multiselect(
